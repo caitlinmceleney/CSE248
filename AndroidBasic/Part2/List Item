@@ -1,0 +1,40 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <ImageView
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:id="@+id/beach_picture"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ocean" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/pebble_beach"
+        android:text="Pebble Beach"
+        android:layout_toRightOf="@id/beach_picture"
+        android:textAppearance="?android:textAppearanceMedium" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/california"
+        android:text="California"
+        android:layout_toRightOf="@id/beach_picture"
+        android:layout_below="@id/pebble_beach"
+        android:textAppearance="?android:textAppearanceSmall" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/miles_away"
+        android:text="10 miles away"
+        android:layout_toRightOf="@id/beach_picture"
+        android:layout_below="@id/california"
+        android:textAppearance="?android:textAppearanceSmall" />
+
+</RelativeLayout>
