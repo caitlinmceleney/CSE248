@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "834469917",
+    "firebase_url": "https://tournamentmanager-5b72a.firebaseio.com",
+    "project_id": "tournamentmanager-5b72a",
+    "storage_bucket": "tournamentmanager-5b72a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:834469917:android:90d8f61f99854c85",
+        "android_client_info": {
+          "package_name": "com.example.caitlin.tournamentmanager"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "834469917-olaicftetu4t01n5ibogmi2076a8b2sn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.caitlin.tournamentmanager",
+            "certificate_hash": "dc104f6969cce9c47c294b390daea4cff954d4f6"
+          }
+        },
+        {
+          "client_id": "834469917-a44r8sffrkfulapgn42pmr020dp0787u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCkidxsyfZAUIXs_XphFkS7kqxTfBYuZgI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "834469917-a44r8sffrkfulapgn42pmr020dp0787u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

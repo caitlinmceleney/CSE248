@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:context=".SignUp">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_default="spread"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintWidth_default="spread"
+        tools:layout_editor_absoluteY="-36dp">
+
+        <LinearLayout
+            android:id="@+id/picture_lin_layout"
+            android:layout_width="281dp"
+            android:layout_height="344dp"
+            android:orientation="vertical"
+            tools:layout_above="@+id/text_lin_layout">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/layout_pic"
+                app:srcCompat="@drawable/Layout" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/text_lin_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/picture_lin_layout"
+            android:orientation="vertical"
+            tools:layout_below="@+id/picture_lin_layout">
+
+            <EditText
+                android:id="@+id/sign_up_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="E-mail"
+                android:inputType="textEmailAddress" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>
