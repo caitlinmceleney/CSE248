@@ -26,11 +26,11 @@ public class LoginScreen extends AppCompatActivity implements View.OnClickListen
 
         mAuth = FirebaseAuth.getInstance();
 
-        emailField = (EditText) findViewById(R.id.email);
-        passwordField = (EditText) findViewById(R.id.password);
+        emailField = (EditText) findViewById(R.id.login_email);
+        passwordField = (EditText) findViewById(R.id.login_password);
 
-        findViewById(R.id.signUp).setOnClickListener(this);
-        findViewById(R.id.log_in_button).setOnClickListener(this);
+        findViewById(R.id.login_change_view).setOnClickListener(this);
+        findViewById(R.id.login_button).setOnClickListener(this);
     }
 
     public void userLogin() {
@@ -85,16 +85,16 @@ public class LoginScreen extends AppCompatActivity implements View.OnClickListen
             //startActivity(new Intent(this, Menu page that I still need to make))
         }
     }
-
+    //controls when things are clicked on the login screen
     @Override
     public void onClick(View view){
         switch(view.getId()){
-            case R.id.signUp:
+            case R.id.login_change_view:
                 finish();
                 startActivity(new Intent(this, SignUp.class));
                 break;
 
-            case R.id.log_in_button:
+            case R.id.login_button:
                 userLogin();
                 break;
             }

@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">TournamentManager</string>
+    <string name="e_mail">E-mail</string>
+    <string name="password">Password</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="already_have_an_account_click_here">Already have an account? Click Here!</string>
+    <string name="don_t_have_an_account_sign_up_here">Don\'t have an account? Sign up here!</string>
 </resources>
