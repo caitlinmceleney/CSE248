@@ -20,9 +20,9 @@ public class LoginScreen extends AppCompatActivity implements View.OnClickListen
     EditText emailField, passwordField;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.login_screen);
+        setContentView(R.layout.activity_login_screen);
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -64,10 +64,9 @@ public class LoginScreen extends AppCompatActivity implements View.OnClickListen
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()) {
-                    finish();
-                    //Intent intent = new Intent(MainActivity.this, <Page to go to)
-                    //intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                    //startActivity(intent);
+                    Intent intent = new Intent(LoginScreen.this, MainMenu.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP); //clear open activities
+                    startActivity(intent);
                 } else{
                      Toast.makeText(getApplicationContext(), task.getException().getMessage(), Toast.LENGTH_SHORT);
 

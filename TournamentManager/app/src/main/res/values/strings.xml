@@ -5,4 +5,6 @@
     <string name="sign_up">Sign Up</string>
     <string name="already_have_an_account_click_here">Already have an account? Click Here!</string>
     <string name="don_t_have_an_account_sign_up_here">Don\'t have an account? Sign up here!</string>
+    <string name="title_activity_main_menu">MainMenu</string>
+    <string name="title_activity_edit_team_info">EditTeamInfo</string>
 </resources>
