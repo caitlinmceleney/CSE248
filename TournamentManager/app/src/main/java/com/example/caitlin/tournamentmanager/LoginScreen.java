@@ -1,11 +1,12 @@
 package com.example.caitlin.tournamentmanager;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -18,6 +19,8 @@ public class LoginScreen extends AppCompatActivity implements View.OnClickListen
 
     FirebaseAuth mAuth;
     EditText emailField, passwordField;
+    //ProgressBar progressBar;
+    Button changeViewBtn, loginBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -26,11 +29,15 @@ public class LoginScreen extends AppCompatActivity implements View.OnClickListen
 
         mAuth = FirebaseAuth.getInstance();
 
-        emailField = (EditText) findViewById(R.id.login_email);
-        passwordField = (EditText) findViewById(R.id.login_password);
+        emailField = findViewById(R.id.login_email);
+        passwordField = findViewById(R.id.login_password);
+        //Button changeView = (Button)findViewById(R.id.login_change_view);
+        //changeView.setOnClickListener(this);
 
-        findViewById(R.id.login_change_view).setOnClickListener(this);
-        findViewById(R.id.login_button).setOnClickListener(this);
+        changeViewBtn = findViewById(R.id.login_change_view);
+        loginBtn = findViewById(R.id.login_button);
+        changeViewBtn.setOnClickListener(this);
+        loginBtn.setOnClickListener(this);
     }
 
     public void userLogin() {
@@ -65,7 +72,7 @@ public class LoginScreen extends AppCompatActivity implements View.OnClickListen
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()) {
                     Intent intent = new Intent(LoginScreen.this, MainMenu.class);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP); //clear open activities
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent);
                 } else{
                      Toast.makeText(getApplicationContext(), task.getException().getMessage(), Toast.LENGTH_SHORT);
@@ -81,16 +88,18 @@ public class LoginScreen extends AppCompatActivity implements View.OnClickListen
         super.onStart();
         if(mAuth.getCurrentUser() != null) {
             finish();
-            //startActivity(new Intent(this, Menu page that I still need to make))
+            startActivity(new Intent(this, MainMenu.class));
         }
     }
+
+
     //controls when things are clicked on the login screen
     @Override
     public void onClick(View view){
         switch(view.getId()){
             case R.id.login_change_view:
-                finish();
-                startActivity(new Intent(this, SignUp.class));
+                //finish();
+                startActivity(new Intent(LoginScreen.this, SignUp.class));
                 break;
 
             case R.id.login_button:

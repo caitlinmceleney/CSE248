@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -20,19 +21,25 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
     EditText emailEntered;
     EditText passwordEntered;
     private FirebaseAuth mAuth;
+    Button changeView, signUp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
 
-        emailEntered = (EditText) findViewById(R.id.sign_up_email);
-        passwordEntered = (EditText) findViewById(R.id.sign_up_password);
+        emailEntered = findViewById(R.id.sign_up_email);
+        passwordEntered = findViewById(R.id.sign_up_password);
 
         mAuth = FirebaseAuth.getInstance();
 
-        findViewById(R.id.sign_up_button).setOnClickListener(this);
-        findViewById(R.id.login_change_view).setOnClickListener(this);
+        changeView = findViewById(R.id.sign_up_change_view);
+        signUp = findViewById(R.id.sign_up_button);
+
+
+
+        signUp.setOnClickListener(this);
+           changeView.setOnClickListener(this);
 
     }
 

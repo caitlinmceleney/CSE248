@@ -4,17 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SignUp"
+    tools:context=".LoginScreen"
     tools:layout_editor_absoluteY="81dp">
 
     <RelativeLayout
         android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:id="@+id/picture_lin_layout"
@@ -27,7 +23,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:srcCompat="@drawable/layout"
-                tools:layout_height="match_parent" />
+                tools:layout_height="match_parent"
+                android:contentDescription="@string/layout_pic_for_the_login_screen" />
+
         </LinearLayout>
 
         <LinearLayout
@@ -35,6 +33,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@+id/picture_lin_layout"
+            android:layout_marginTop="0dp"
             android:orientation="vertical"
             tools:layout_below="@+id/picture_lin_layout">
 
@@ -47,7 +46,8 @@
                 android:hint="@string/e_mail"
                 android:importantForAutofill="no"
                 android:inputType="textEmailAddress"
-                tools:paddingTop="20dp" tools:targetApi="o" />
+                tools:paddingTop="20dp"
+                tools:targetApi="o" />
 
             <EditText
                 android:id="@+id/login_password"
@@ -58,7 +58,8 @@
                 android:hint="@string/password"
                 android:importantForAutofill="no"
                 android:inputType="textPassword"
-                tools:paddingTop="20dp" tools:targetApi="o" />
+                tools:paddingTop="20dp"
+                tools:targetApi="o" />
 
             <Button
                 android:id="@+id/login_button"
@@ -66,18 +67,20 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="20dp"
+                android:clickable="true"
                 android:gravity="center_vertical|center_horizontal|center"
-                android:text="@string/sign_up" />
+                android:text="@string/log_in"
+                android:focusable="true" />
 
-            <TextView
+            <Button
                 android:id="@+id/login_change_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical|center_horizontal"
-                android:layout_marginTop="20dp"
-                android:gravity="center_vertical|center_horizontal"
-                android:text="@string/don_t_have_an_account_sign_up_here"
-                android:textSize="15sp" />
+                android:layout_gravity="center_horizontal"
+                android:clickable="true"
+                android:text="@string/no_account_sign_up"
+                android:focusable="true" />
+
         </LinearLayout>
     </RelativeLayout>
 

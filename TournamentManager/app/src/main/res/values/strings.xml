@@ -7,4 +7,114 @@
     <string name="don_t_have_an_account_sign_up_here">Don\'t have an account? Sign up here!</string>
     <string name="title_activity_main_menu">MainMenu</string>
     <string name="title_activity_edit_team_info">EditTeamInfo</string>
+    <string name="no_account_sign_up">No account? Sign Up!</string>
+    <string name="log_in">Log In</string>
+    <string name="todo">TODO</string>
+    <string name="layout_pic_for_the_login_screen">layout pic for the login screen</string>
+    <string name="already_have_an_account_log_in">Already have an account? Log In!</string>
+    <string name="title_activity_rule_book">RuleBook</string>
+    <string name="large_text">
+        "Material is the metaphor.\n\n"
+
+        "A material metaphor is the unifying theory of a rationalized space and a system of motion."
+        "The material is grounded in tactile reality, inspired by the study of paper and ink, yet "
+        "technologically advanced and open to imagination and magic.\n"
+        "Surfaces and edges of the material provide visual cues that are grounded in reality. The "
+        "use of familiar tactile attributes helps users quickly understand affordances. Yet the "
+        "flexibility of the material creates new affordances that supercede those in the physical "
+        "world, without breaking the rules of physics.\n"
+        "The fundamentals of light, surface, and movement are key to conveying how objects move, "
+        "interact, and exist in space and in relation to each other. Realistic lighting shows "
+        "seams, divides space, and indicates moving parts.\n\n"
+
+        "Bold, graphic, intentional.\n\n"
+
+        "The foundational elements of print based design typography, grids, space, scale, color, "
+        "and use of imagery guide visual treatments. These elements do far more than please the "
+        "eye. They create hierarchy, meaning, and focus. Deliberate color choices, edge to edge "
+        "imagery, large scale typography, and intentional white space create a bold and graphic "
+        "interface that immerse the user in the experience.\n"
+        "An emphasis on user actions makes core functionality immediately apparent and provides "
+        "waypoints for the user.\n\n"
+
+        "Motion provides meaning.\n\n"
+
+        "Motion respects and reinforces the user as the prime mover. Primary user actions are "
+        "inflection points that initiate motion, transforming the whole design.\n"
+        "All action takes place in a single environment. Objects are presented to the user without "
+        "breaking the continuity of experience even as they transform and reorganize.\n"
+        "Motion is meaningful and appropriate, serving to focus attention and maintain continuity. "
+        "Feedback is subtle yet clear. Transitions are efﬁcient yet coherent.\n\n"
+
+        "3D world.\n\n"
+
+        "The material environment is a 3D space, which means all objects have x, y, and z "
+        "dimensions. The z-axis is perpendicularly aligned to the plane of the display, with the "
+        "positive z-axis extending towards the viewer. Every sheet of material occupies a single "
+        "position along the z-axis and has a standard 1dp thickness.\n"
+        "On the web, the z-axis is used for layering and not for perspective. The 3D world is "
+        "emulated by manipulating the y-axis.\n\n"
+
+        "Light and shadow.\n\n"
+
+        "Within the material environment, virtual lights illuminate the scene. Key lights create "
+        "directional shadows, while ambient light creates soft shadows from all angles.\n"
+        "Shadows in the material environment are cast by these two light sources. In Android "
+        "development, shadows occur when light sources are blocked by sheets of material at "
+        "various positions along the z-axis. On the web, shadows are depicted by manipulating the "
+        "y-axis only. The following example shows the card with a height of 6dp.\n\n"
+
+        "Resting elevation.\n\n"
+
+        "All material objects, regardless of size, have a resting elevation, or default elevation "
+        "that does not change. If an object changes elevation, it should return to its resting "
+        "elevation as soon as possible.\n\n"
+
+        "Component elevations.\n\n"
+
+        "The resting elevation for a component type is consistent across apps (e.g., FAB elevation "
+        "does not vary from 6dp in one app to 16dp in another app).\n"
+        "Components may have different resting elevations across platforms, depending on the depth "
+        "of the environment (e.g., TV has a greater depth than mobile or desktop).\n\n"
+
+        "Responsive elevation and dynamic elevation offsets.\n\n"
+
+        "Some component types have responsive elevation, meaning they change elevation in response "
+        "to user input (e.g., normal, focused, and pressed) or system events. These elevation "
+        "changes are consistently implemented using dynamic elevation offsets.\n"
+        "Dynamic elevation offsets are the goal elevation that a component moves towards, relative "
+        "to the component’s resting state. They ensure that elevation changes are consistent "
+        "across actions and component types. For example, all components that lift on press have "
+        "the same elevation change relative to their resting elevation.\n"
+        "Once the input event is completed or cancelled, the component will return to its resting "
+        "elevation.\n\n"
+
+        "Avoiding elevation interference.\n\n"
+
+        "Components with responsive elevations may encounter other components as they move between "
+        "their resting elevations and dynamic elevation offsets. Because material cannot pass "
+        "through other material, components avoid interfering with one another any number of ways, "
+        "whether on a per component basis or using the entire app layout.\n"
+        "On a component level, components can move or be removed before they cause interference. "
+        "For example, a floating action button (FAB) can disappear or move off screen before a "
+        "user picks up a card, or it can move if a snackbar appears.\n"
+        "On the layout level, design your app layout to minimize opportunities for interference. "
+        "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
+        "when a user tries to pick up one of cards.\n\n"
+    </string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_login">Sign in</string>
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password (optional)</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+    <string name="introduction_description_ultimate_is_a_non_contact_disc_sport_played_by_two_teams_of_seven_players_the_object_of_the_game_is_to_score_goals_a_goal_is_scored_when_a_player_catches_any_legal_pass_in_the_end_zone_that_player_is_attacking_a_player_may_not_run_while_holding_the_disc_the_disc_is_advanced_by_passing_it_to_other_players_the_disc_may_be_passed_in_any_direction_any_time_a_pass_is_incomplete_a_turnover_occurs_resulting_in_an_immediate_change_of_the_team_in_possession_of_the_disc_spirit_of_the_game_ultimate_relies_upon_a_spirit_of_sportsmanship_that_places_the_responsibility_for_fair_play_on_the_player_highly_competitive_play_is_encouraged_but_never_at_the_expense_of_mutual_respect_among_competitors_adherence_to_the_agreed_upon_rules_or_the_basic_joy_of_play_protection_of_these_vital_elements_serves_to_eliminate_unsportsmanlike_conduct_from_the_ultimate_field_such_actions_as_taunting_opposing_players_dangerous_aggression_belligerent_intimidation_intentional_infractions_or_other_win_at_all_costs_behavior_are_contrary_to_the_spirit_of_the_game_and_must_be_avoided_by_all_players_captain_s_clause_a_game_may_be_played_under_any_variation_of_the_rules_agreed_upon_by_the_captains_of_the_teams_involved_in_tournament_play_variations_are_subject_to_approval_by_the_event_organizer_such_things_as_game_length_field_dimensions_number_of_players_and_stall_count_can_easily_be_altered_to_suit_the_level_of_play_before_a_game_starts_each_team_designates_one_captain_to_represent_them_in_disagreements_and_arbitration_event_organizer_the_event_organizer_may_modify_rules_relating_to_game_logistics_in_order_to_suit_the_event_examples_include_game_length_game_total_upper_score_limits_caps_time_of_game_limits_time_caps_halftime_length_number_of_time_outs_starting_time_point_assessments_uniform_requirements_and_observer_operations_any_such_change_must_be_established_before_competition_starts_general_vs_specific_rules_many_of_these_rules_are_general_in_nature_and_cover_most_situations_however_some_rules_cover_specific_situations_and_override_the_general_case">Introduction Description: Ultimate is a non-contact disc sport played by two teams of seven players. The object of the game is to score goals. A goal is scored when a player catches any legal pass in the end zone that player is attacking. A player may not run while holding the disc. The disc is advanced by passing it to other players. The disc may be passed in any direction. Any time a pass is incomplete, a turnover occurs, resulting in an immediate change of the team in possession of the disc. Spirit of the Game: Ultimate relies upon a spirit of sportsmanship that places the responsibility for fair play on the player. Highly competitive play is encouraged, but never at the expense of mutual respect among competitors, adherence to the agreed upon rules, or the basic joy of play. Protection of these vital elements serves to eliminate unsportsmanlike conduct from the Ultimate field. Such actions as taunting opposing players, dangerous aggression, belligerent intimidation, intentional infractions, or other win-at-all-costs behavior are contrary to the spirit of the game and must be avoided by all players. Captain\'s Clause: A game may be played under any variation of the rules agreed upon by the captains of the teams involved. In tournament play, variations are subject to approval by the event organizer. Such things as game length, field dimensions, number of players and stall count can easily be altered to suit the level of play. Before a game starts, each team designates one captain to represent them in disagreements and arbitration. Event Organizer: The event organizer may modify rules relating to game logistics in order to suit the event. Examples include game length (game total), upper score limits (caps), time of game limits (time caps), halftime length, number of time-outs, starting time point assessments, uniform requirements and observer operations. Any such change must be established before competition starts. General vs. Specific Rules: Many of these rules are general in nature and cover most situations. However, some rules cover specific situations and override the general case.</string>
 </resources>

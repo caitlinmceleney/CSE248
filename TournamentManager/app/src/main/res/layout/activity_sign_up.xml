@@ -27,7 +27,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:srcCompat="@drawable/layout"
-                tools:layout_height="match_parent" />
+                tools:layout_height="match_parent"
+                android:contentDescription="TODO" />
         </LinearLayout>
 
         <LinearLayout
@@ -47,7 +48,7 @@
                 android:hint="@string/e_mail"
                 android:importantForAutofill="no"
                 android:inputType="textEmailAddress"
-                tools:paddingTop="20dp" />
+                tools:paddingTop="20dp" tools:targetApi="o"/>
 
             <EditText
                 android:id="@+id/sign_up_password"
@@ -69,15 +70,14 @@
                 android:gravity="center_vertical|center_horizontal|center"
                 android:text="@string/sign_up" />
 
-            <TextView
+            <Button
                 android:id="@+id/sign_up_change_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical|center_horizontal"
-                android:layout_marginTop="20dp"
-                android:gravity="center_vertical|center_horizontal"
-                android:text="@string/already_have_an_account_click_here"
-                android:textSize="15sp" />
+                android:layout_gravity="center_vertical|center|clip_vertical"
+                android:gravity="center_vertical|center_horizontal|center"
+                android:text="@string/already_have_an_account_log_in" />
+
         </LinearLayout>
     </RelativeLayout>
 
