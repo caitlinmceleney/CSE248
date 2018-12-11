@@ -1,15 +1,14 @@
-package com.example.caitlin.tournamentmanager.PlayerInfo;
+package com.example.caitlin.tournamentmanager;
 
 public class Player {
     private String firstName;
     private String lastName;
-    private State state;
-    private String gender;
-    private double age;
+    private String age;
 
-    public Player(String firstName, String lastName) {
+    public Player(String firstName, String lastName, String age) {
         this.firstName = firstName;
         this.lastName = lastName;
+        this.age = age;
     }
 
     public String getFirstName() {
@@ -28,27 +27,11 @@ public class Player {
         this.lastName = lastName;
     }
 
-    public State getState() {
-        return state;
-    }
-
-    public void setState(State state) {
-        this.state = state;
-    }
-
-    public String getGender() {
-        return gender;
-    }
-
-    public void setGender(String gender) {
-        this.gender = gender;
-    }
-
-    public double getAge() {
+    public String getAge() {
         return age;
     }
 
-    public void setAge(double age) {
+    public void setAge(String age) {
         this.age = age;
     }
 }

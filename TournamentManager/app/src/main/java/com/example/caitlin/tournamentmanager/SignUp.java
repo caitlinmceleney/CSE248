@@ -6,8 +6,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -15,13 +17,14 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class SignUp extends AppCompatActivity implements View.OnClickListener {
     //add more fields as necessary
-    EditText emailEntered;
-    EditText passwordEntered;
+    EditText emailEntered, passwordEntered,  teamName;
     private FirebaseAuth mAuth;
     Button changeView, signUp;
+    Spinner teamDivision;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,12 +33,16 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
 
         emailEntered = findViewById(R.id.sign_up_email);
         passwordEntered = findViewById(R.id.sign_up_password);
-
+        teamName = findViewById(R.id.teamName);
+        teamDivision = findViewById(R.id.teamDivision);
         mAuth = FirebaseAuth.getInstance();
 
         changeView = findViewById(R.id.sign_up_change_view);
         signUp = findViewById(R.id.sign_up_button);
 
+        String[] divisions = new String[] {"Open Division", "Mens Division", "Womens Division", "Mixed Division"};
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, divisions);
+        teamDivision.setAdapter(adapter);
 
 
         signUp.setOnClickListener(this);
@@ -44,8 +51,10 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
     }
 
     private void registerUser(){
-        String email = emailEntered.getText().toString().trim();
+        final String email = emailEntered.getText().toString().trim();
         String password = passwordEntered.getText().toString();
+        final String name = teamName.getText().toString().trim();
+        final String division = teamDivision.getSelectedItem().toString();
 
         if(email.isEmpty()){
             emailEntered.setError("Email is required.");
@@ -71,12 +80,15 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
             return;
         }
 
+
         mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
-                //whet registration completed - method called
                 if(task.isSuccessful()){
-                    Toast.makeText(getApplicationContext(), "User Subscription is successful!", Toast.LENGTH_SHORT);
+                     TeamInfo team = new TeamInfo(name, email, division);
+                    FirebaseDatabase.getInstance().getReference("Teams")
+                            .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                            .setValue(team);
                     Intent intent = new Intent(SignUp.this, LoginScreen.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP); //clear open activities
                     startActivity(intent);
