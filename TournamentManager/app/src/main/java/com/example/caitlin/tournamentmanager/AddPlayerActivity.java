@@ -58,9 +58,10 @@ public class AddPlayerActivity extends AppCompatActivity {
                 }
 
                 Player player = new Player(firstName, lastName, age);
-                FirebaseDatabase.getInstance().getReference("Rosters")
-                        .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
-                        .push()
+                String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
+                FirebaseDatabase.getInstance().getReference("Roster " + uid)
+                        .child(player.getLastName())
+                        //.push()
                         .setValue(player).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {

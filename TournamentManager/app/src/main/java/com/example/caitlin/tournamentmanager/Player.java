@@ -10,6 +10,9 @@ public class Player {
         this.lastName = lastName;
         this.age = age;
     }
+    public Player(){
+
+    }
 
     public String getFirstName() {
         return firstName;
@@ -33,5 +36,14 @@ public class Player {
 
     public void setAge(String age) {
         this.age = age;
+    }
+
+    @Override
+    public String toString() {
+        return "Player{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", age='" + age + '\'' +
+                '}';
     }
 }

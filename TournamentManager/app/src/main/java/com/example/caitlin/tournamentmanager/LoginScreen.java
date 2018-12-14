@@ -71,6 +71,7 @@ public class LoginScreen extends AppCompatActivity implements View.OnClickListen
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()) {
+                    finish();
                     Intent intent = new Intent(LoginScreen.this, MainMenu.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent);
@@ -86,7 +87,7 @@ public class LoginScreen extends AppCompatActivity implements View.OnClickListen
     @Override
     protected void onStart() {
         super.onStart();
-        if(mAuth.getCurrentUser() != null) {
+        if(mAuth.getCurrentUser() != null) {//user already logged in
             finish();
             startActivity(new Intent(this, MainMenu.class));
         }
@@ -98,7 +99,7 @@ public class LoginScreen extends AppCompatActivity implements View.OnClickListen
     public void onClick(View view){
         switch(view.getId()){
             case R.id.login_change_view:
-                //finish();
+                finish();
                 startActivity(new Intent(LoginScreen.this, SignUp.class));
                 break;
 

@@ -85,6 +85,7 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
+                    finish();
                      TeamInfo team = new TeamInfo(name, email, division);
                     FirebaseDatabase.getInstance().getReference("Teams")
                             .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
@@ -111,6 +112,7 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
                 registerUser();
                 break;
             case R.id.sign_up_change_view:
+                finish();
                 startActivity(new Intent(this, LoginScreen.class));
                 break;
         }
