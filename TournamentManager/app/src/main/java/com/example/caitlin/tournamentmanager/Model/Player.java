@@ -1,4 +1,4 @@
-package com.example.caitlin.tournamentmanager;
+package com.example.caitlin.tournamentmanager.Model;
 
 public class Player {
     private String firstName;
@@ -40,10 +40,6 @@ public class Player {
 
     @Override
     public String toString() {
-        return "Player{" +
-                "firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", age='" + age + '\'' +
-                '}';
+        return firstName + " " + lastName + ",  " + age;
     }
 }

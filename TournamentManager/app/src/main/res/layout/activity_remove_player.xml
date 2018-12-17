@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Controller.AddPlayerActivity">
+    tools:context=".Controller.RemovePlayerActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -16,55 +16,42 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/textView3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_margin="10dp"
                 android:gravity="center_vertical|center_horizontal"
-                android:paddingTop="24dp"
-                android:text="Add New Player to Roster"
+                android:paddingBottom="10dp"
+                android:text="Remove Player By Last Name"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textSize="24sp" />
 
             <EditText
-                android:id="@+id/playerFirstName"
+                android:id="@+id/enterLastName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_above="@+id/playerLastName"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="32dp"
-                android:layout_marginBottom="20dp"
-                android:ems="10"
-                android:hint="First Name"
-                android:inputType="text" />
-
-            <EditText
-                android:id="@+id/playerLastName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginBottom="20dp"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:layout_margin="10dp"
                 android:ems="10"
                 android:hint="Last Name"
-                android:inputType="text" />
-
-            <EditText
-                android:id="@+id/playerAge"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginBottom="20dp"
-                android:ems="10"
-                android:hint="Age"
-                android:inputType="number" />
+                android:inputType="textPersonName" />
 
             <Button
-                android:id="@+id/addToRoster"
+                android:id="@+id/removePlayerBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:text="Add to Roster" />
-        </LinearLayout>
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:layout_margin="10dp"
+                android:text="Remove" />
 
+            <Button
+                android:id="@+id/cancelBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:layout_margin="10dp"
+                android:text="Cancel" />
+        </LinearLayout>
     </RelativeLayout>
 
 </android.support.constraint.ConstraintLayout>

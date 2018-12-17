@@ -17,23 +17,29 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".LoginScreen">
+        <activity android:name=".Controller.LoginScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SignUp" />
-        <activity android:name=".EditTeam" />
-        <activity android:name=".AddFieldMap" />
-        <activity android:name=".MainMenu" />
-        <activity android:name=".RuleBook" />
+        <activity android:name=".Controller.SignUpActivity" />
+        <activity android:name=".Controller.MainMenuActivity" />
+        <activity android:name=".Controller.RuleBookViewActivity" />
         <activity
-            android:name=".RosterViewActivity"
+            android:name=".Controller.RosterViewActivity"
             android:label="@string/title_activity_roster_view"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".AddPlayerActivity"></activity>
+        <activity android:name=".Controller.AddPlayerActivity" />
+        <activity android:name=".Controller.CreateTournamentActivity" />
+        <activity android:name=".Controller.ViewAllTeamsActivity" />
+        <activity android:name=".Controller.MyTournaments" />
+        <activity android:name=".Controller.MyTournamentsActivity" />
+        <activity android:name=".Controller.TournamentChatActivity" />
+        <activity android:name=".Controller.EditMyTeamActivity" />
+        <activity android:name=".Controller.RemovePlayerActivity" />
+        <activity android:name=".Controller.OtherTeamRosterView"></activity>
     </application>
 
 </manifest>

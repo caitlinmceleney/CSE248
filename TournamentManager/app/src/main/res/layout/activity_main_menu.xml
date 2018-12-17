@@ -4,40 +4,116 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainMenu">
+    tools:context=".Controller.MainMenuActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TableLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-            <TableRow
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:padding="10dp"
+                app:srcCompat="@drawable/usaulogo" />
+
+            <TextView
+                android:id="@+id/teamNameView"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" >
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:fontFamily="@font/roboto_medium"
+                android:gravity="center_vertical|center_horizontal"
+                android:padding="5dp"
+                android:textSize="24sp" />
 
-                <Button
-                    android:id="@+id/rulebookBtn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Rule Book" />
+            <TextView
+                android:id="@+id/teamDivisionView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:fontFamily="@font/roboto_medium"
+                android:gravity="center_vertical|center_horizontal"
+                android:padding="5dp"
+                android:textSize="18sp" />
 
-                <Button
-                    android:id="@+id/logoutBtn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Log Out" />
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-                <Button
-                    android:id="@+id/teamViewBtn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="View Your Roster" />
-            </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:padding="5dp">
 
-        </TableLayout>
+                    <Button
+                        android:id="@+id/myTournamentsBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="Tournament Chat Rooms" />
+
+                    <Button
+                        android:id="@+id/editTeamInfoBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Edit Your Team Info" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="5dp">
+
+                    <Button
+                        android:id="@+id/createTournamentBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Create Tournament" />
+
+                    <Button
+                        android:id="@+id/teamViewBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="View Your Roster" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="5dp">
+
+                    <Button
+                        android:id="@+id/viewTeamsBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="View Teams" />
+
+                    <Button
+                        android:id="@+id/rulebookBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Rule Book" />
+                </TableRow>
+
+            </TableLayout>
+
+            <Button
+                android:id="@+id/logoutBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:text="Log Out" />
+
+        </LinearLayout>
+
     </RelativeLayout>
 
 </android.support.constraint.ConstraintLayout>

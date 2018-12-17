@@ -1,4 +1,4 @@
-package com.example.caitlin.tournamentmanager;
+package com.example.caitlin.tournamentmanager.Controller;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,17 +10,17 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.caitlin.tournamentmanager.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class LoginScreen extends AppCompatActivity implements View.OnClickListener {
+public class LoginScreenActivity extends AppCompatActivity implements View.OnClickListener {
 
-    FirebaseAuth mAuth;
-    EditText emailField, passwordField;
-    //ProgressBar progressBar;
-    Button changeViewBtn, loginBtn;
+    private FirebaseAuth mAuth;
+    private EditText emailField, passwordField;
+    private Button changeViewBtn, loginBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -31,8 +31,6 @@ public class LoginScreen extends AppCompatActivity implements View.OnClickListen
 
         emailField = findViewById(R.id.login_email);
         passwordField = findViewById(R.id.login_password);
-        //Button changeView = (Button)findViewById(R.id.login_change_view);
-        //changeView.setOnClickListener(this);
 
         changeViewBtn = findViewById(R.id.login_change_view);
         loginBtn = findViewById(R.id.login_button);
@@ -72,11 +70,13 @@ public class LoginScreen extends AppCompatActivity implements View.OnClickListen
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()) {
                     finish();
-                    Intent intent = new Intent(LoginScreen.this, MainMenu.class);
+                    Intent intent = new Intent(LoginScreenActivity.this, MainMenuActivity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent);
                 } else{
-                     Toast.makeText(getApplicationContext(), task.getException().getMessage(), Toast.LENGTH_SHORT);
+                    passwordField.setError("Incorrect Email or Password");
+                    passwordField.requestFocus();
+                    Toast.makeText(getApplicationContext(), task.getException().getMessage(), Toast.LENGTH_SHORT);
 
                     }
                 }
@@ -89,7 +89,7 @@ public class LoginScreen extends AppCompatActivity implements View.OnClickListen
         super.onStart();
         if(mAuth.getCurrentUser() != null) {//user already logged in
             finish();
-            startActivity(new Intent(this, MainMenu.class));
+            startActivity(new Intent(this, MainMenuActivity.class));
         }
     }
 
@@ -100,7 +100,7 @@ public class LoginScreen extends AppCompatActivity implements View.OnClickListen
         switch(view.getId()){
             case R.id.login_change_view:
                 finish();
-                startActivity(new Intent(LoginScreen.this, SignUp.class));
+                startActivity(new Intent(LoginScreenActivity.this, SignUpActivity.class));
                 break;
 
             case R.id.login_button:

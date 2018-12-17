@@ -1,11 +1,12 @@
-package com.example.caitlin.tournamentmanager;
+package com.example.caitlin.tournamentmanager.Controller;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.example.caitlin.tournamentmanager.R;
 import com.github.barteksc.pdfviewer.PDFView;
 
-public class RuleBook extends AppCompatActivity {
+public class RuleBookViewActivity extends AppCompatActivity {
 
     PDFView rules;
 

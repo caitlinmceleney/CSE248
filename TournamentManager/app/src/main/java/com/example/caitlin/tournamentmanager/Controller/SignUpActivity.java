@@ -1,4 +1,4 @@
-package com.example.caitlin.tournamentmanager;
+package com.example.caitlin.tournamentmanager.Controller;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;
@@ -12,6 +12,8 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.example.caitlin.tournamentmanager.Model.TeamInfo;
+import com.example.caitlin.tournamentmanager.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -19,12 +21,11 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class SignUp extends AppCompatActivity implements View.OnClickListener {
-    //add more fields as necessary
-    EditText emailEntered, passwordEntered,  teamName;
+public class SignUpActivity extends AppCompatActivity implements View.OnClickListener {
+    private EditText emailEntered, passwordEntered,  teamName, confirmPass;
     private FirebaseAuth mAuth;
-    Button changeView, signUp;
-    Spinner teamDivision;
+    private Button changeView, signUp;
+    private Spinner teamDivision;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,24 +36,26 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
         passwordEntered = findViewById(R.id.sign_up_password);
         teamName = findViewById(R.id.teamName);
         teamDivision = findViewById(R.id.teamDivision);
+        confirmPass = findViewById(R.id.confirmPass);
         mAuth = FirebaseAuth.getInstance();
 
         changeView = findViewById(R.id.sign_up_change_view);
         signUp = findViewById(R.id.sign_up_button);
 
-        String[] divisions = new String[] {"Open Division", "Mens Division", "Womens Division", "Mixed Division"};
+        String[] divisions = new String[] {"Mens Division", "Womens Division", "Mixed Division"};
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, divisions);
         teamDivision.setAdapter(adapter);
 
 
         signUp.setOnClickListener(this);
-           changeView.setOnClickListener(this);
+        changeView.setOnClickListener(this);
 
     }
 
     private void registerUser(){
         final String email = emailEntered.getText().toString().trim();
         String password = passwordEntered.getText().toString();
+        String confirmPassword = confirmPass.getText().toString();
         final String name = teamName.getText().toString().trim();
         final String division = teamDivision.getSelectedItem().toString();
 
@@ -79,6 +82,11 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
             passwordEntered.requestFocus();
             return;
         }
+        if(password.contentEquals(confirmPassword) == false ){
+            passwordEntered.setError("Passwords do not match!");
+            passwordEntered.requestFocus();
+            return;
+        }
 
 
         mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -90,8 +98,8 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
                     FirebaseDatabase.getInstance().getReference("Teams")
                             .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                             .setValue(team);
-                    Intent intent = new Intent(SignUp.this, LoginScreen.class);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP); //clear open activities
+                    Intent intent = new Intent(SignUpActivity.this, LoginScreenActivity.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent);
                 } else{
                     if(task.getException() instanceof FirebaseAuthUserCollisionException){
@@ -113,7 +121,7 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
                 break;
             case R.id.sign_up_change_view:
                 finish();
-                startActivity(new Intent(this, LoginScreen.class));
+                startActivity(new Intent(this, LoginScreenActivity.class));
                 break;
         }
 

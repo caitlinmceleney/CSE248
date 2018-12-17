@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Controller.RosterViewActivity">
+    tools:context=".Controller.OtherTeamRosterView">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -23,13 +23,12 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/textView4"
+                    android:id="@+id/otherTeamName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical|center_horizontal"
                     android:layout_margin="10dp"
                     android:gravity="center_vertical|center_horizontal"
-                    android:text="Your Team Roster"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                     android:textSize="24sp" />
 
@@ -39,34 +38,18 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical|center_horizontal"
                     android:layout_margin="10dp"
+                    android:fontFamily="@font/roboto_medium"
                     android:text="Name, Age"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                    android:textSize="20dp" />
+                    android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                    android:textSize="20sp" />
 
                 <TextView
-                    android:id="@+id/playerNameRosterView"
+                    android:id="@+id/teamRoster"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
                     android:fontFamily="@font/roboto_medium"
                     android:textColor="@color/common_google_signin_btn_text_dark_focused"
                     android:textSize="18sp" />
-
-                <Button
-                    android:id="@+id/addPlayerBtn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="bottom|center_horizontal"
-                    android:text="Add Player"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
-
-                <Button
-                    android:id="@+id/removePlayerBtn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="bottom|center_horizontal"
-                    android:text="Remove Player"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
                 <Button
                     android:id="@+id/returnToMain"
@@ -77,6 +60,7 @@
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
             </LinearLayout>
         </ScrollView>
+
     </RelativeLayout>
 
 </android.support.constraint.ConstraintLayout>
